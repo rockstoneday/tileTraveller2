@@ -96,6 +96,7 @@ def play():
     coins = 0
     total = 1
     moves = 0
+    seed = input("Input seed: ")
 
     while not victory:
         valid_directions = find_directions(col, row)
