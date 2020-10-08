@@ -1,4 +1,5 @@
 # Constants
+# https://github.com/rockstoneday/tileTraveller2.git
 NORTH = 'n'
 EAST = 'e'
 SOUTH = 's'
