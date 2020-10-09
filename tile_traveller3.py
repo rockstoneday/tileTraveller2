@@ -43,13 +43,10 @@ def coincount(col, row):
     if (col, row) in [(1,2), (2,2), (2,3), (3,2)]:
         inn = random.choice(['y', 'n'])
         print(f"Pull a lever (y/n): {inn}")
-        if inn == 'y' or inn == 'Y':
-            total = 1
-            return total
-        else:
-            return 0
-    else:
-        return 0
+        if inn.lower() == 'y':
+            return 1
+    return 0
+    
 
         
 def find_directions(col, row):
@@ -80,7 +77,7 @@ def play_one_move(col, row, valid_directions, coins):
     print(f"Direction: {direction}")
     direction = direction.lower()
     
-    if not direction in valid_directions:
+    if direction not in valid_directions:
         print("Not a valid direction!")
     else:
         col, row = move(direction, col, row)
@@ -105,11 +102,11 @@ def play():
             print(f"You received 1 coin, your total is now {coins}.")
             total += 1
         moves += 1
-    print(f"Victory! Total coins {coins}. Moves {moves}")
+    print(f"Victory! Total coins {coins}. Moves {moves}.")
     replay = input("Play again (y/n): ")
-    if replay == 'y' or replay == 'Y':
+    if replay.lower() == 'y':
         play()
 # The main program starts here
-seed = input("Input seed: ")
+seed = int(input("Input seed: "))
 random.seed(seed)
 play()

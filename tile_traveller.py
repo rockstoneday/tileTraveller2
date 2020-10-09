@@ -41,13 +41,9 @@ def print_directions(directions_str):
 def coincount(col, row):
     if (col, row) in [(1,2), (2,2), (2,3), (3,2)]:
         inn = input("Pull a lever (y/n): ")
-        if inn == 'y' or inn == 'Y':
-            total = 1
-            return total
-        else:
-            return 0
-    else:
-        return 0
+        if inn.lower() == 'y':
+            return 1
+    return 0
 
         
 def find_directions(col, row):
